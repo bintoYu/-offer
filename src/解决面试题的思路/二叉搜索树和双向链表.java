@@ -4,7 +4,7 @@ import 数据结构.TreeNode;
 public class 二叉搜索树和双向链表
 {
 	private TreeNode preNode = null;
-	private TreeNode res = null;
+	private TreeNode head = null;
 	
     public TreeNode Convert(TreeNode pRootOfTree) {
         if(pRootOfTree == null) return null;
@@ -13,7 +13,7 @@ public class 二叉搜索树和双向链表
         if(preNode == null)
         {
         	preNode = pRootOfTree;
-        	res = preNode;
+        	head = preNode;
         }
         else
         {
@@ -24,7 +24,7 @@ public class 二叉搜索树和双向链表
         
         Convert(pRootOfTree.right);
         
-        return res;
+        return head;
     }
     
     

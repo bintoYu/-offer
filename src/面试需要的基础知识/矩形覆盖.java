@@ -1,3 +1,4 @@
+package 面试需要的基础知识;
 
 public class 矩形覆盖
 {

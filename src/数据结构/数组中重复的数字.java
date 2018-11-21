@@ -1,11 +1,18 @@
 /**
  * 
  */
-package 数组;
+package 数据结构;
 
 public class 数组中重复的数字
 {
-    public boolean duplicate(int numbers[],int length,int [] duplication) {
+	/**
+	 * 方法1：挪动数组，但保证不使用额外空间
+	 * @param numbers
+	 * @param length
+	 * @param duplication
+	 * @return
+	 */
+    public boolean duplicate1(int numbers[],int length,int [] duplication) {
     	if(numbers == null || numbers.length == 0) return false;
     	
         for(int i = 0; i < length; i++)
@@ -24,6 +31,17 @@ public class 数组中重复的数字
         	}
         }
         return false;
+    }
+    
+    /**
+     * 不允许更改原数组，但可以额外空间,使用map
+     * @param numbers
+     * @param length
+     * @param duplication
+     * @return
+     */
+    public boolean duplicate(int numbers[],int length,int [] duplication) {
+    	return false;
     }
     
     public static void main(String[] args)

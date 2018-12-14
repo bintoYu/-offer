@@ -1,7 +1,7 @@
 /**
  * 
  */
-package 数据结构;
+package 面试需要的基础知识;
 
 /**
  * @author Administrator

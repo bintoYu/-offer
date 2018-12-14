@@ -1,4 +1,4 @@
-package 数据结构;
+package 面试需要的基础知识;
 
 public class 二维数组中的查找
 {

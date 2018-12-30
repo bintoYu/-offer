@@ -3,6 +3,8 @@ package 面试需要的基础知识;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import 数据结构.ListNode;
+
 /**
  * 倒序的三种方法：
  * 1、改变链结构，使其倒序

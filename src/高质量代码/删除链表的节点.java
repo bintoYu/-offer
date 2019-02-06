@@ -6,11 +6,17 @@ public class 删除链表的节点
 {
 	public ListNode deleteNode(ListNode head,ListNode toBeDeletedNode)
 	{
-		if(head == null)
-			return null;
+		if(head == null || toBeDeletedNode == null)
+			return head;
 		
-		//头和中间
-		if(toBeDeletedNode.next != null)
+		//头和只有一个
+		if(toBeDeletedNode == head)
+		{
+			head = head.next;
+			return head;
+		}
+		//中间
+		else if(toBeDeletedNode.next != null)
 		{
 			toBeDeletedNode.val = toBeDeletedNode.next.val;
 			toBeDeletedNode.next = toBeDeletedNode.next.next;
@@ -25,11 +31,7 @@ public class 删除链表的节点
 			pNode.next = null;
 			return head;
 		}	
-		//只有一个
-		else
-		{
-			return null;
-		}
-
+		
+		return null;
 	}
 }

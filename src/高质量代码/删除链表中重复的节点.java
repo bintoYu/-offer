@@ -8,34 +8,33 @@ import 数据结构.ListNode;
 //已通过
 public class 删除链表中重复的节点
 {
-	public ListNode deleteDuplicateNode(ListNode head)
+	public ListNode deleteDuplicateNode(ListNode pHead)
 	{
-		if(head == null) return head;
+		if(pHead == null) return pHead;
 		
 		ListNode preNode = null;
-		ListNode pNode = head;
+		ListNode pNode = pHead;
 		
 		while(pNode!=null)
 		{
 			//出现重复，注意pNode.next可能为null
 			if(pNode.next != null && pNode.val == pNode.next.val)
 			{
-				ListNode tobeDelete = pNode.next;
 				//不断前进到最后一个重复的点
-				while(tobeDelete.next!=null && tobeDelete.val == tobeDelete.next.val)
-					tobeDelete = tobeDelete.next;
+				while(pNode.next!=null && pNode.val == pNode.next.val)
+					pNode = pNode.next;
 				
 				//移除重复的点，并前进
 				//考虑头就重复的情况
 				if(preNode == null)
 				{
-					head = tobeDelete.next;
-					pNode = head;
+					pHead = pNode.next;
+					pNode = pHead;
 				}
 				else
 				{
 					//其余情况
-					pNode = tobeDelete.next;
+					pNode = pNode.next;
 					preNode.next = pNode;
 				}
 			}
@@ -47,7 +46,7 @@ public class 删除链表中重复的节点
 			}
 		}
 		
-		return head;
+		return pHead;
 	}
 	
 	

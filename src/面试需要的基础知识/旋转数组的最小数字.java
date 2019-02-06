@@ -23,8 +23,8 @@ public class 旋转数组的最小数字
 			int middle = (begin+end)/2;
 			if(nums[begin] == nums[end] && nums[begin] == nums[middle]) return getMinByOrder(nums, begin, end);
 			
-			if(nums[middle] < nums[begin]) end = middle;
-			else begin = middle;
+			if(nums[begin] <= nums[middle]) begin = middle;
+			else if(nums[end] >= nums[middle]) end = middle;
 		}
 		
 		return nums[begin+1];
@@ -42,7 +42,7 @@ public class 旋转数组的最小数字
 	
 	public static void main(String[] args)
 	{
-		int[] nums = {1,0,1,1,1};
+		int[] nums = {4,5,1,2,3};
 		int min = new 旋转数组的最小数字().getMin(nums);
 		System.out.println(min);
 	}
